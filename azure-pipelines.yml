@@ -7,11 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'macos-latest'
 
 variables:
   buildConfiguration: 'debug'
-  outputDirectory: '$(build.binariesDirectory)\$(buildConfiguration)'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -26,12 +26,6 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
-    
-- task: VSBuild@1
-  inputs:
-    solution: '**\UIAndroidTest.csproj'
-    platform: 'x64'
-    configuration: 'debug'
 
 - task: AppCenterTest@1
   inputs:
