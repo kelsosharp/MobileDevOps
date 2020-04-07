@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'debug'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  outputDirectory: '$(build.sourcesdirectory)/bin/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -42,7 +42,7 @@ steps:
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     prepareTests: true
     frameworkOption: 'uitest'
-    uiTestBuildDirectory: 'MobileDevOps/bin/debug'
+    uiTestBuildDirectory: '$(build.sourcesdirectory)/bin/$(buildConfiguration)'
     uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/xamarin.uitest/3.0.3/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
