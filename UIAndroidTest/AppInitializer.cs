@@ -10,7 +10,7 @@ namespace UIAndroidTest
         {
             if (platform == Platform.Android)
             {
-                return ConfigureApp.Android.ApkFile("/bin/debug").StartApp();
+                return ConfigureApp.Android.ApkFile("../MobileDevOps/bin/debug").StartApp();
             }
 
             return ConfigureApp.iOS.StartApp();
