@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Debug'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)/apk'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -23,12 +23,12 @@ steps:
 - task: XamarinAndroid@1
   inputs:
     projectFile: '**/MobileDevOps.csproj'
-    outputDirectory: '$(outputDirectory)/apk'
+    outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 - task: AppCenterTest@1
   inputs:
-    appFile: 'MobileDevOps/bin/apk'
+    appFile: '$(outputDirectory)'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'uitest'
     uiTestBuildDirectory: 'MobileDevOps/bin/Debug'
