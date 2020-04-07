@@ -27,12 +27,11 @@ steps:
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 
-- task: MSBuild@1
+- task: VSBuild@1
   inputs:
-    solution: '**/UIAndroidTest.csproj'
-    msbuildArchitecture: 'x64'
-    platform: 'Any CPU'
-    configuration: 'Debug'
+    solution: '**\UIAndroidTest.csproj'
+    platform: 'any cpu'
+    configuration: 'debug'
     
 - task: AppCenterTest@1
   inputs:
