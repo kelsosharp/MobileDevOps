@@ -22,7 +22,7 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/MobileDevOps.csproj'
+    projectFile: '**/*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
@@ -32,7 +32,7 @@ steps:
     appFile: '$(outputDirectory)'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'uitest'
-    uiTestBuildDirectory: '/UIAndroidTest/bin/debug'
+    uiTestBuildDirectory: '$(build.sourcesdirectory)/UIAndroidTest/bin/debug'
     uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
