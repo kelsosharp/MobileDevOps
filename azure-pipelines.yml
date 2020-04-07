@@ -10,8 +10,8 @@ pool:
   vmImage: 'macos-latest'
 
 variables:
-  buildConfiguration: 'Debug'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)/apk'
+  buildConfiguration: 'debug'
+  outputDirectory: '$(build.sourcesdirectory)/$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -22,24 +22,18 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/MobileDevOps.csproj'
+    projectFile: '**/*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 
-- task: VSBuild@1
-  inputs:
-    solution: '**\UIAndroidTest.csproj'
-    platform: 'any cpu'
-    configuration: 'debug'
-    
 - task: AppCenterTest@1
   inputs:
     appFile: '$(outputDirectory)'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'uitest'
-    uiTestBuildDirectory: 'MobileDevOps/bin/Debug'
-    uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools'
+    uiTestBuildDirectory: '$(outputDirectory)'
+    uiTestToolsDirectory: '$(outputDirectory)/packages/Xamarin.UITest.*/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
     appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
