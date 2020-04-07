@@ -25,16 +25,3 @@ steps:
     projectFile: '**/*droid*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
-
-- task: AppCenterTest@1
-  inputs:
-    appFile: 'MobileDevOps/bin/apk'
-    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
-    frameworkOption: 'uitest'
-    uiTestBuildDirectory: 'MobileDevOps/bin/Debug'
-    uiTestToolsDirectory: 'C:\Users\Dell\.nuget\packages\xamarin.uitest\3.0.6\tools'
-    credentialsOption: 'serviceEndpoint'
-    serverEndpoint: 'Visual Studio App Center'
-    appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
-    devices: 'eee5de63'
-    localeOption: 'en_US'
