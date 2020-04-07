@@ -33,7 +33,7 @@ steps:
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'uitest'
     uiTestBuildDirectory: 'MobileDevOps/bin/Debug'
-    uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools'
+    uiTestToolsDirectory: '/Users/runner/hostedtoolcache/NuGet/5.5.1/x64/packages/Xamarin.UITest.*/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
     appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
