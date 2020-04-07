@@ -42,7 +42,7 @@ steps:
     prepareTests: true
     frameworkOption: 'uitest'
     uiTestBuildDirectory: '$(outputDirectory)'
-    uiTestToolsDirectory: '$(outputDirectory)/packages/Xamarin.UITest.*/tools'
+    uiTestToolsDirectory: '($(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools)'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
     appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
