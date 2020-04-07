@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'debug'
-  outputDirectory: '$(build.sourcesdirectory)/bin/$(buildConfiguration)'
+  outputDirectory: '/bin/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -24,25 +24,25 @@ steps:
 - task: XamarinAndroid@1
   inputs:
     projectFile: '**/MobileDevOps.csproj'
-    outputDirectory: '$(outputDirectory)'
+    outputDirectory: 'MobileDevOps/$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 
 - task: XamarinAndroid@1
   inputs:
     projectFile: '**/UIAndroidTest.csproj'
-    outputDirectory: '$(outputDirectory)'
+    outputDirectory: 'UIAndroidTest/$(outputDirectory)'
     createAppPackage: false
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 
 - task: AppCenterTest@1
   inputs:
-    appFile: '$(outputDirectory)'
+    appFile: 'MobileDevOps/$(outputDirectory)'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     prepareTests: true
     frameworkOption: 'uitest'
-    uiTestBuildDirectory: '$(build.sourcesdirectory)/bin/$(buildConfiguration)'
+    uiTestBuildDirectory: 'MobileDevOps/bin/$(buildConfiguration)'
     uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/xamarin.uitest/3.0.3/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
