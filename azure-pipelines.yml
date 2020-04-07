@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'debug'
-  outputDirectory: '/bin/$(buildConfiguration)'
+  outputDirectory: 'bin/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
