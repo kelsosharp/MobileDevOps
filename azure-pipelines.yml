@@ -19,6 +19,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '**/*.sln'
+    restoreDirectory: '$(build.sourcesdirectory)/packages'
 
 - task: XamarinAndroid@1
   inputs:
@@ -42,7 +43,7 @@ steps:
     prepareTests: true
     frameworkOption: 'uitest'
     uiTestBuildDirectory: '$(outputDirectory)'
-    uiTestToolsDirectory: ($(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools/tools)
+    uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/Xamarin.UITest.3.0.3/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
     appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
