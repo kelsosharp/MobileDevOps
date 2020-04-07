@@ -23,9 +23,13 @@ steps:
 - task: XamarinAndroid@1
   inputs:
     projectFile: '**/*droid*.csproj'
+
+- task: XamarinAndroid@1
+  inputs:
+    projectFile: '**/MobileDevOps.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
-
+    jdkOption: 'JDKVersion'
 - task: AppCenterTest@1
   inputs:
     appFile: 'MobileDevOps/bin/apk'
