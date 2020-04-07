@@ -38,7 +38,7 @@ steps:
     appFile: '$(outputDirectory)'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     frameworkOption: 'uitest'
-    uiTestBuildDirectory: '$(build.sourcesdirectory)/UIAndroidTest/bin/debug'
+    uiTestBuildDirectory: '$(build.sourcesdirectory)/bin/debug'
     uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/Xamarin.UITest.*/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
