@@ -28,6 +28,14 @@ steps:
     configuration: '$(buildConfiguration)'
     jdkOption: 'JDKVersion'
 
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: 'MobileDevOps/MobileDevOps/$(outputDirectory)/com.companyname.MobileDevOps.apk'
+    apksignerKeystoreFile: 'testing.jks'
+    apksignerKeystorePassword: 'Drouillard2#'
+    apksignerKeystoreAlias: 'key0'
+    apksignerKeyPassword: 'Drouillard2#'
+
 - task: XamarinAndroid@1
   inputs:
     projectFile: '**/UIAndroidTest.csproj'
