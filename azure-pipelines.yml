@@ -32,7 +32,7 @@ steps:
   inputs:
     apkFiles: 'MobileDevOps/MobileDevOps/$(outputDirectory)/com.companyname.MobileDevOps.apk'
     apksignerKeystoreFile: 'testing.jks'
-    apksignerKeystorePassword: 'Drouillard2#'
+    apksignerKeystorePassword: 'Testing2#'
     apksignerKeystoreAlias: 'key0'
     apksignerKeyPassword: 'Testing2#'
 
