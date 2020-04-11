@@ -31,10 +31,10 @@ steps:
 - task: AndroidSigning@3
   inputs:
     apkFiles: 'MobileDevOps/MobileDevOps/$(outputDirectory)/com.companyname.MobileDevOps.apk'
-    apksignerKeystoreFile: 'testing.jks'
+    apksignerKeystoreFile: 'testing2.jks'
     apksignerKeystorePassword: 'Testing2#'
     apksignerKeystoreAlias: 'key0'
-    apksignerKeyPassword: 'Drouillard2#'
+    apksignerKeyPassword: 'Testing3@'
 
 - task: XamarinAndroid@1
   inputs:
