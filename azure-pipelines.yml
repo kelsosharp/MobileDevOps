@@ -34,7 +34,7 @@ steps:
     apksignerKeystoreFile: 'testing.jks'
     apksignerKeystorePassword: 'Drouillard2#'
     apksignerKeystoreAlias: 'key0'
-    apksignerKeyPassword: 'Drouillard2#'
+    apksignerKeyPassword: 'Testing2#'
 
 - task: XamarinAndroid@1
   inputs:
