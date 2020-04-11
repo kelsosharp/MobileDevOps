@@ -54,6 +54,6 @@ steps:
     uiTestToolsDirectory: '$(build.sourcesdirectory)/packages/xamarin.uitest/3.0.3/tools'
     credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'Visual Studio App Center'
-    appSlug: 'kelso.sharp-labscloudacademy.onmicrosoft.com/Test-App'
+    appSlug: 'kelso.sharp-gmail.com/App1'
     devices: 'eee5de63'
     localeOption: 'en_US'
