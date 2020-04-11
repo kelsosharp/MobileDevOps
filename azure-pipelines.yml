@@ -38,7 +38,7 @@ steps:
 
 - task: AppCenterTest@1
   inputs:
-    appFile: '/Users/runner/runners/2.165.2/work/1/s/MobileDevOps/MobileDevOps/bin/debug/'
+    appFile: 'MobileDevOps/MobileDevOps/$(outputDirectory)/com.companyname.MobileDevOps.apk'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     prepareTests: true
     frameworkOption: 'uitest'
